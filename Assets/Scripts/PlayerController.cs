@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     public float Speed;
     public Text countText;
     public Text winText;
+    public Button nextLevel;
+    public Button mainMenu;
 
     private Rigidbody rb;
     private int count;
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour {
         count = 0;
         SetCountText ();
         winText.text = "";
+        
+        
     }
 
     void FixedUpdate()
