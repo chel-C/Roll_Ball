@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mini-Game.unity
+- path: Assets/MazeTest2.unity
   isLoaded: 1
   isActive: 1
