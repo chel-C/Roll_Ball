@@ -87,6 +87,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GemExample\Scripts\DemoTimeOfDay.cs" />
+    <Compile Include="Assets\GemExample\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\ChangeMusic.cs" />
     <Compile Include="Assets\Scripts\ClicktoLoadAsync.cs" />
@@ -97,6 +99,9 @@
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\RubberEffect.cs" />
     <Compile Include="Assets\Scripts\ballInCupCounter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Gem\Shaders\Gem.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -7,20 +7,23 @@ public class PlayerController : MonoBehaviour {
 
     public float Speed;
     public Text countText;
-    public Text winText;
-    public Button nextLevel;
-    public Button mainMenu;
+    public Text bobaCountText;
+    public GameObject winHUD;
+    public GameObject cupCollider;
 
     private Rigidbody rb;
     private int count;
+    private int countBoba;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
+        countBoba = 0;
         SetCountText ();
-        winText.text = "";
-        
+        SetCountBobaText();
+        winHUD.gameObject.SetActive(false);
+
         
     }
 
@@ -42,16 +45,30 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
-            if (count >= 10)
-            {
-                winText.text = "you did it!!";
-            }
+            //if (count >= 10)
+            //{
+            //    winText.text = "you did it!!";
+            //   nextLevel.gameObject.SetActive(true);
+            //    mainMenu.gameObject.SetActive(true);
+            //}
+        }
+        if (other.gameObject == cupCollider)
+        {
+            countBoba = countBoba + 1;
+            winHUD.gameObject.SetActive(true);
+            SetCountBobaText();
         }
     }
 
     void SetCountText ()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = count.ToString();
+
+    }
+
+    void SetCountBobaText ()
+    {
+        bobaCountText.text = "Delicious Bobas: " + countBoba.ToString();
 
     }
 }
